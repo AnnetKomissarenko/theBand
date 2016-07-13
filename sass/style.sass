@@ -1,0 +1,449 @@
+@import mixins.sass
+@font-face 
+    font-family: "Lora Bold" /* Имя шрифта */
+    src: url(../fonts/Lora-Bold.ttf)
+@font-face 
+    font-family: "Lora Regular" /* Имя шрифта */
+    src: url(../fonts/Lora-Regular.ttf)
+@font-face 
+    font-family: "Oswald Bold" /* Имя шрифта */
+    src: url(../fonts/Oswald-Bold.ttf)
+
+@font-face 
+    font-family: "Oswald Regular" /* Имя шрифта */
+    src: url(../fonts/Oswald-Regular.ttf)
+
+@font-face 
+    font-family: "Oswald Light" /* Имя шрифта */
+    src: url(../fonts/Oswald-Light.ttf)
+
+*
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+
+a 
+    cursor: pointer
+
+body 
+    min-width: 320px
+    max-width: 1900px
+    margin: 0 auto
+    color: $font
+    .container 
+        width: 100%
+        position: relative
+        nav
+            width: 100%
+            height: 70px
+            padding: 0 70px
+            position: fixed
+            top: 0
+            left: 0
+            z-index: 10
+            ul
+                height: 100%
+                width: auto
+                li
+                    display: inline-block
+                    height: 100%
+                    list-style-type: none
+                    margin-right: 10px
+                    padding-left: 20px
+                    position: relative
+                    &::before
+                        content: ''
+                        display: block
+                        position: absolute
+                        left: 0
+                        top: 30px
+                        width: 7px
+                        height: 7px
+                        border-radius: 50%
+                        background-color: $font
+                    &:first-child
+                        &::before
+                            display: none
+                    a
+                        display: block
+                        text-decoration: none
+                        color: $font
+                        font: 18px "Lora Bold", serif
+                        line-height: 70px
+                        transition: all, 0.3s
+                        &:hover
+                            color: $lightestfont
+        header
+            height: 100vh
+            background: url(../images/headerBg.jpg)
+            
+            -webkit-background-size: cover
+            background-size: cover
+            position: relative
+            .title
+                height: 100%
+                width: 25%
+                position: absolute
+                top: 0
+                right: 10%
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+                align-content: center
+                background: url('../images/header_textBg4.png') no-repeat 0% -500%, url('../images/header_textBg3.png') no-repeat 33% 500%, url('../images/header_textBg2.png') no-repeat 66% -500%, url('../images/header_textBg.png') no-repeat 99% 500%
+                animation-name: words
+                animation-duration: 3s
+                animation-timing-function: ease-out
+                animation-iteration-count: 1
+                animation-delay: 0.5s
+                animation-fill-mode: forwards
+                img
+                    display: block
+                    margin-bottom: 20px  
+                    opacity: 0
+                    &:nth-child(1)
+                        animation-name: title1
+                        animation-duration: 1s
+                        animation-timing-function: ease-out
+                        animation-iteration-count: 1
+                        animation-delay: 3.5s
+                        animation-fill-mode: forwards
+                    &:nth-child(2)
+                        animation-name: title2
+                        animation-duration: 0.5s
+                        animation-timing-function: ease-in
+                        animation-iteration-count: 1
+                        animation-delay: 4.5s
+                        animation-fill-mode: forwards
+                        
+            
+        .slider 
+            height: 100vh
+            width: 100%
+            min-width: 320px
+            max-width: 2000px
+            position: relative
+            .slide 
+                height: 100%
+                margin: 0 auto
+                max-width: 2000px
+                min-width: 320px
+                position: absolute
+                background: url(../images/slide3.jpg) no-repeat
+                background-size: cover
+                top: 0
+                bottom: 0
+                left: 0
+                right: 0
+                opacity: 0
+                transition: all 0.2s ease-in-out
+                h2 
+                    position: absolute
+                    bottom: 50px
+                    left: 415px
+                    font: 100px "Oswald Bold", Arial, sans-serif
+                    color: $lightfont
+                    text-transform: uppercase
+                    line-height: 108px
+                    span 
+                        color: $font
+                .history 
+                    position: absolute
+                    bottom: 50px
+                    right: 100px
+                    width: 450px
+                    color: $font
+                    text-transform: none
+                    h3 
+                        font: 36px "Oswald Regular", Arial, sans-serif
+                        line-height: 78px
+                    p 
+                        font: 18px "Lora Regular", Arial, sans-serif
+                        line-height: 36px
+                a.arrow 
+                    +arrow(65px, 65px, 6px, $lightfont)
+                a.arrow-prev 
+                    left: 50px
+                a.arrow-next  
+                    transform: rotate(225deg)
+                    right: 50px
+                ul 
+                    display: inline-block
+                    position: absolute
+                    top: 100px
+                    right: 180px
+                    transform: rotate(-90deg)
+                    text-align: center
+                    li 
+                        display: block
+                        height: 40px
+                        a 
+                            display: block
+                            text-decoration: none
+                            text-transform: uppercase
+                            color: $lightfont
+                            font: 12px "Lora Bold", "Times New Roman", serif
+                            line-height: 40px
+                            opacity: 0.2
+                            text-align: center
+                            span 
+                                display: inline-block
+                                padding-right: 10px
+                                &::after 
+                                    content: ""
+                                    display: inline-block
+                                    height: 14px
+                                    width: 14px
+                                    border-radius: 50%
+                                    background-color: $lightfont
+                                    vertical-align: middle
+                                    margin-left: 10px
+                            &:nth-child(2)
+                                padding-right: 50px    
+                            
+                        .active 
+                            opacity: 1    
+            [id^="target-item"]
+                display: none  
+            .slide1
+                z-index: 2
+                opacity: 1
+                &*:target~.slide1       
+                    opacity: 0
+            #target-item-1:target~.slide1
+                opacity: 1  
+            #target-item-2:target~.slide2,
+            #target-item-3:target~.slide3,
+            #target-item-4:target~.slide4,
+            #target-item-5:target~.slide5
+                z-index: 3
+                opacity: 1 
+        .music
+            background-color: $whity
+            height: 100vh
+            display: flex
+            .discography,
+            .nowPlaying
+                display: inline-block
+                width: 50%
+                height: 100%
+                img
+                    width: 100%
+                    height: auto
+                    margin: 50px 0 40px 0
+                h3
+                    font: bold 30px "Oswald Regular", sans-serif
+                    margin: 0 0 30px 50px
+                ul
+                    margin: 0 50px 0 50px
+                    li
+                        list-style-type: none
+                        font: 20px "Oswald Regular", sans-serif
+                        position: relative
+                        a
+                            text-decoration: none
+                            color: $font
+                        span
+                            display: inline-block
+                            position: absolute
+                            top: 0
+                            left: 60% 
+                            &::before
+                                content: ''
+                                display: block
+                                position: absolute
+                                top: 35%
+                                left: -50px
+                                width: 10px
+                                height: 10px
+                                border-radius: 50%
+                                background-color: $lightestfont
+                        button
+                            float: right
+                            margin-left: 20px
+                            +button($lightfont, $whity) 
+                            &:last-of-type
+                                +button($lightestfont, $lightfont)
+                            
+            .nowPlaying
+                padding: 50px 50px
+                h3
+                    margin-bottom: 10px
+                h4
+                    font: 20px "Oswald Regular", sans-serif
+                    text-indent: 50px
+                    margin-bottom: 10px
+                h5
+                    font: 14px "Lora Regular", sans-serif
+                    font-style: italic
+                    color: $mediumfont
+                    text-indent: 50px
+                audio
+                    margin: 30px 0 30px 50px
+                ul
+                    display: none
+                    li
+                        font: 14px "Lora Regular", sans-serif
+                        font-style: italic
+                        list-style-image: url('../images/playInactive.png')
+                        list-style-position: inside
+                        cursor: pointer
+                        a
+                            display: block
+                            color: $mediumfont
+                    li.active
+                        list-style-image: url('../images/playActive.png')
+        .tours
+            width: 100%
+            height: 100vh
+            background-color: #f1eeed
+            h3
+                text-align: center
+                font: bold 30px "Oswald Regular", sans-serif
+                padding: 40px
+            .tourDates
+                position: relative
+                width: 60%
+                height: 40%
+                margin: 0 auto 50px
+                text-align: center
+                hr
+                    border: 1px solid $lightestfont
+                    position: absolute
+                    width: 100%
+                    top: 10px
+                    left: 0
+                ul
+                    display: inline-block
+                    transform: rotate(270deg)
+                    position: absolute
+                    top: -175px
+                    left: 270px
+                    li
+                        position: relative
+                        text-align: right
+                        list-style-type: none
+                        padding: 10px 0
+                        font: 14px "Lora Bold", sans-serif
+                        &::after
+                            content: ''
+                            display: block
+                            width: 14px
+                            height: 14px
+                            border-radius: 50%
+                            background-color: $lightestfont
+                            position: absolute
+                            right: -30px
+                            top: 45%
+                        &:nth-child(1),
+                        &:nth-child(2),
+                        &:nth-child(3),
+                        &:nth-child(4),
+                        &:nth-child(5),
+                        &:nth-child(6)
+                            color: $lightestfont
+                        &:nth-child(7)    
+                            &::after
+                                background-color: $font
+                        &:nth-child(8),
+                        &:nth-child(9),
+                        &:nth-child(10),
+                        &:nth-child(11),
+                        &:nth-child(12)
+                            color: $lightfont
+                            &::after
+                                background-color: $lightfont
+            .closestEvents
+                width: 60%
+                height: 25%
+                margin: 0 auto
+                overflow-y: scroll
+                li
+                    list-style-type: none
+                    padding: 10px
+                    border-bottom: 1px dotted $lightfont
+                    text-transform: capitalize
+                    font: 25px "Oswald Light", sans-serif
+                    position: relative
+                    .date
+                        display: inline-block
+                        font: bold 32px "Oswald Regular", sans-serif
+                        position: relative
+                        margin-right: 50px
+                        border-right: 6px solid $lightestfont
+                        padding-right: 50px
+                        line-height: 100%
+                        &::before
+                            content: "DEC"
+                            display: block
+                            position: absolute
+                            font: bold 14px "Oswald Regular", sans-serif
+                            top: -5%
+                            left: 35px
+                        &::after
+                            content: "2015"
+                            display: block
+                            position: absolute
+                            font: bold 14px "Oswald Regular", sans-serif
+                            top: 40%
+                            left: 35px
+                    &:nth-child(4)
+                        .date
+                            &::before
+                                content: "JAN"
+                            &::after
+                                content: "2016"
+                    &:nth-child(5)
+                        .date
+                            &::before
+                                content: "FEB"
+                            &::after
+                                content: "2016"   
+                    &:nth-child(6)
+                        .date
+                            &::before
+                                content: "MAR"
+                            &::after
+                                content: "2016"
+                    button
+                        +button($lightfont, $whity)
+                        position: absolute
+                        top: 0
+                        bottom: 0
+                        right: 10px
+                        margin: auto 0
+                        
+                        
+                        
+                    
+                    
+                            
+
+                        
+                
+                
+            
+                            
+                        
+                        
+                
+            
+                     
+                
+                        
+                          
+                            
+                            
+                    
+                    
+                
+            
+            
+                
+                                
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+@-webkit-keyframes words {
+  from {
+    background: url("../images/header_textBg4.png") no-repeat 0% -500%, url("../images/header_textBg3.png") no-repeat 33% 500%, url("../images/header_textBg2.png") no-repeat 66% -500%, url("../images/header_textBg.png") no-repeat 99% 500%;
+  }
+  to {
+    background: url("../images/header_textBg4.png") no-repeat 0% 70%, url("../images/header_textBg3.png") no-repeat 33% 40%, url("../images/header_textBg2.png") no-repeat 66% 55%, url("../images/header_textBg.png") no-repeat 99% 70%;
+  }
+}
+@keyframes words {
+  from {
+    background: url("../images/header_textBg4.png") no-repeat 0% -500%, url("../images/header_textBg3.png") no-repeat 33% 500%, url("../images/header_textBg2.png") no-repeat 66% -500%, url("../images/header_textBg.png") no-repeat 99% 500%;
+  }
+  to {
+    background: url("../images/header_textBg4.png") no-repeat 0% 70%, url("../images/header_textBg3.png") no-repeat 33% 40%, url("../images/header_textBg2.png") no-repeat 66% 55%, url("../images/header_textBg.png") no-repeat 99% 70%;
+  }
+}
+@-webkit-keyframes title1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes title1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes title2 {
+  from {
+    -webkit-transform: rotate(360deg) scale(0);
+            transform: rotate(360deg) scale(0);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) scale(100%);
+            transform: rotate(0deg) scale(100%);
+    -webkit-filter: drop-shadow(0 0 4px #fff);
+            filter: drop-shadow(0 0 4px #fff);
+  }
+}
+@keyframes title2 {
+  from {
+    -webkit-transform: rotate(360deg) scale(0);
+            transform: rotate(360deg) scale(0);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) scale(100%);
+            transform: rotate(0deg) scale(100%);
+    -webkit-filter: drop-shadow(0 0 4px #fff);
+            filter: drop-shadow(0 0 4px #fff);
+  }
+}
+
+/*# sourceMappingURL=animate.css.map */

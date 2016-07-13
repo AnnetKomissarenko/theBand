@@ -1,0 +1,631 @@
+@font-face {
+  font-family: "Lora Bold";
+  src: url(../fonts/Lora-Bold.ttf);
+}
+@font-face {
+  font-family: "Lora Regular";
+  src: url(../fonts/Lora-Regular.ttf);
+}
+@font-face {
+  font-family: "Oswald Bold";
+  src: url(../fonts/Oswald-Bold.ttf);
+}
+@font-face {
+  font-family: "Oswald Regular";
+  src: url(../fonts/Oswald-Regular.ttf);
+}
+@font-face {
+  font-family: "Oswald Light";
+  src: url(../fonts/Oswald-Light.ttf);
+}
+/* line 20, ../sass/style.sass */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 25, ../sass/style.sass */
+a {
+  cursor: pointer;
+}
+
+/* line 28, ../sass/style.sass */
+body {
+  min-width: 320px;
+  max-width: 1900px;
+  margin: 0 auto;
+  color: #241c18;
+}
+/* line 33, ../sass/style.sass */
+body .container {
+  width: 100%;
+  position: relative;
+}
+/* line 36, ../sass/style.sass */
+body .container nav {
+  width: 100%;
+  height: 70px;
+  padding: 0 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+/* line 44, ../sass/style.sass */
+body .container nav ul {
+  height: 100%;
+  width: auto;
+}
+/* line 47, ../sass/style.sass */
+body .container nav ul li {
+  display: inline-block;
+  height: 100%;
+  list-style-type: none;
+  margin-right: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+/* line 54, ../sass/style.sass */
+body .container nav ul li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #241c18;
+}
+/* line 65, ../sass/style.sass */
+body .container nav ul li:first-child::before {
+  display: none;
+}
+/* line 67, ../sass/style.sass */
+body .container nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: #241c18;
+  font: 18px "Lora Bold", serif;
+  line-height: 70px;
+  -webkit-transition: all, 0.3s;
+          transition: all, 0.3s;
+}
+/* line 74, ../sass/style.sass */
+body .container nav ul li a:hover {
+  color: #e4dddb;
+}
+/* line 76, ../sass/style.sass */
+body .container header {
+  height: 100vh;
+  background: url(../images/headerBg.jpg);
+  background-size: cover;
+  position: relative;
+}
+/* line 83, ../sass/style.sass */
+body .container header .title {
+  height: 100%;
+  width: 25%;
+  position: absolute;
+  top: 0;
+  right: 10%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  background: url("../images/header_textBg4.png") no-repeat 0% -500%, url("../images/header_textBg3.png") no-repeat 33% 500%, url("../images/header_textBg2.png") no-repeat 66% -500%, url("../images/header_textBg.png") no-repeat 99% 500%;
+  -webkit-animation-name: words;
+          animation-name: words;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+/* line 100, ../sass/style.sass */
+body .container header .title img {
+  display: block;
+  margin-bottom: 20px;
+  opacity: 0;
+}
+/* line 104, ../sass/style.sass */
+body .container header .title img:nth-child(1) {
+  -webkit-animation-name: title1;
+          animation-name: title1;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+/* line 111, ../sass/style.sass */
+body .container header .title img:nth-child(2) {
+  -webkit-animation-name: title2;
+          animation-name: title2;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+/* line 120, ../sass/style.sass */
+body .container .slider {
+  height: 100vh;
+  width: 100%;
+  min-width: 320px;
+  max-width: 2000px;
+  position: relative;
+}
+/* line 126, ../sass/style.sass */
+body .container .slider .slide {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 2000px;
+  min-width: 320px;
+  position: absolute;
+  background: url(../images/slide3.jpg) no-repeat;
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+/* line 140, ../sass/style.sass */
+body .container .slider .slide h2 {
+  position: absolute;
+  bottom: 50px;
+  left: 415px;
+  font: 100px "Oswald Bold", Arial, sans-serif;
+  color: #826b60;
+  text-transform: uppercase;
+  line-height: 108px;
+}
+/* line 148, ../sass/style.sass */
+body .container .slider .slide h2 span {
+  color: #241c18;
+}
+/* line 150, ../sass/style.sass */
+body .container .slider .slide .history {
+  position: absolute;
+  bottom: 50px;
+  right: 100px;
+  width: 450px;
+  color: #241c18;
+  text-transform: none;
+}
+/* line 157, ../sass/style.sass */
+body .container .slider .slide .history h3 {
+  font: 36px "Oswald Regular", Arial, sans-serif;
+  line-height: 78px;
+}
+/* line 160, ../sass/style.sass */
+body .container .slider .slide .history p {
+  font: 18px "Lora Regular", Arial, sans-serif;
+  line-height: 36px;
+}
+/* line 163, ../sass/style.sass */
+body .container .slider .slide a.arrow {
+  display: block;
+  height: 65px;
+  width: 65px;
+  background-color: transparent;
+  border: 6px solid #826b60;
+  border-radius: 5px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-right-color: transparent;
+  border-top-color: transparent;
+  position: absolute;
+  top: 45%;
+}
+/* line 165, ../sass/style.sass */
+body .container .slider .slide a.arrow-prev {
+  left: 50px;
+}
+/* line 167, ../sass/style.sass */
+body .container .slider .slide a.arrow-next {
+  -webkit-transform: rotate(225deg);
+      -ms-transform: rotate(225deg);
+          transform: rotate(225deg);
+  right: 50px;
+}
+/* line 170, ../sass/style.sass */
+body .container .slider .slide ul {
+  display: inline-block;
+  position: absolute;
+  top: 100px;
+  right: 180px;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  text-align: center;
+}
+/* line 177, ../sass/style.sass */
+body .container .slider .slide ul li {
+  display: block;
+  height: 40px;
+}
+/* line 180, ../sass/style.sass */
+body .container .slider .slide ul li a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #826b60;
+  font: 12px "Lora Bold", "Times New Roman", serif;
+  line-height: 40px;
+  opacity: 0.2;
+  text-align: center;
+}
+/* line 189, ../sass/style.sass */
+body .container .slider .slide ul li a span {
+  display: inline-block;
+  padding-right: 10px;
+}
+/* line 192, ../sass/style.sass */
+body .container .slider .slide ul li a span::after {
+  content: "";
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: #826b60;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+/* line 201, ../sass/style.sass */
+body .container .slider .slide ul li a:nth-child(2) {
+  padding-right: 50px;
+}
+/* line 204, ../sass/style.sass */
+body .container .slider .slide ul li .active {
+  opacity: 1;
+}
+/* line 206, ../sass/style.sass */
+body .container .slider [id^="target-item"] {
+  display: none;
+}
+/* line 208, ../sass/style.sass */
+body .container .slider .slide1 {
+  z-index: 2;
+  opacity: 1;
+}
+/* line 211, ../sass/style.sass */
+body .container .slider .slide1*:target ~ .slide1 {
+  opacity: 0;
+}
+/* line 213, ../sass/style.sass */
+body .container .slider #target-item-1:target ~ .slide1 {
+  opacity: 1;
+}
+/* line 215, ../sass/style.sass */
+body .container .slider #target-item-2:target ~ .slide2,
+body .container .slider #target-item-3:target ~ .slide3,
+body .container .slider #target-item-4:target ~ .slide4,
+body .container .slider #target-item-5:target ~ .slide5 {
+  z-index: 3;
+  opacity: 1;
+}
+/* line 221, ../sass/style.sass */
+body .container .music {
+  background-color: #f8f8f8;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+/* line 225, ../sass/style.sass */
+body .container .music .discography,
+body .container .music .nowPlaying {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+/* line 230, ../sass/style.sass */
+body .container .music .discography img,
+body .container .music .nowPlaying img {
+  width: 100%;
+  height: auto;
+  margin: 50px 0 40px 0;
+}
+/* line 234, ../sass/style.sass */
+body .container .music .discography h3,
+body .container .music .nowPlaying h3 {
+  font: bold 30px "Oswald Regular", sans-serif;
+  margin: 0 0 30px 50px;
+}
+/* line 237, ../sass/style.sass */
+body .container .music .discography ul,
+body .container .music .nowPlaying ul {
+  margin: 0 50px 0 50px;
+}
+/* line 239, ../sass/style.sass */
+body .container .music .discography ul li,
+body .container .music .nowPlaying ul li {
+  list-style-type: none;
+  font: 20px "Oswald Regular", sans-serif;
+  position: relative;
+}
+/* line 243, ../sass/style.sass */
+body .container .music .discography ul li a,
+body .container .music .nowPlaying ul li a {
+  text-decoration: none;
+  color: #241c18;
+}
+/* line 246, ../sass/style.sass */
+body .container .music .discography ul li span,
+body .container .music .nowPlaying ul li span {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 60%;
+}
+/* line 251, ../sass/style.sass */
+body .container .music .discography ul li span::before,
+body .container .music .nowPlaying ul li span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: -50px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #e4dddb;
+}
+/* line 261, ../sass/style.sass */
+body .container .music .discography ul li button,
+body .container .music .nowPlaying ul li button {
+  float: right;
+  margin-left: 20px;
+  border: none;
+  width: 70px;
+  height: 25px;
+  font: 14px "Oswald Regular", sans-serif;
+  background-color: #826b60;
+  color: #f8f8f8;
+}
+/* line 265, ../sass/style.sass */
+body .container .music .discography ul li button:last-of-type,
+body .container .music .nowPlaying ul li button:last-of-type {
+  border: none;
+  width: 70px;
+  height: 25px;
+  font: 14px "Oswald Regular", sans-serif;
+  background-color: #e4dddb;
+  color: #826b60;
+}
+/* line 268, ../sass/style.sass */
+body .container .music .nowPlaying {
+  padding: 50px 50px;
+}
+/* line 270, ../sass/style.sass */
+body .container .music .nowPlaying h3 {
+  margin-bottom: 10px;
+}
+/* line 272, ../sass/style.sass */
+body .container .music .nowPlaying h4 {
+  font: 20px "Oswald Regular", sans-serif;
+  text-indent: 50px;
+  margin-bottom: 10px;
+}
+/* line 276, ../sass/style.sass */
+body .container .music .nowPlaying h5 {
+  font: 14px "Lora Regular", sans-serif;
+  font-style: italic;
+  color: #9c8981;
+  text-indent: 50px;
+}
+/* line 281, ../sass/style.sass */
+body .container .music .nowPlaying audio {
+  margin: 30px 0 30px 50px;
+}
+/* line 283, ../sass/style.sass */
+body .container .music .nowPlaying ul {
+  display: none;
+}
+/* line 285, ../sass/style.sass */
+body .container .music .nowPlaying ul li {
+  font: 14px "Lora Regular", sans-serif;
+  font-style: italic;
+  list-style-image: url("../images/playInactive.png");
+  list-style-position: inside;
+  cursor: pointer;
+}
+/* line 291, ../sass/style.sass */
+body .container .music .nowPlaying ul li a {
+  display: block;
+  color: #9c8981;
+}
+/* line 294, ../sass/style.sass */
+body .container .music .nowPlaying ul li.active {
+  list-style-image: url("../images/playActive.png");
+}
+/* line 296, ../sass/style.sass */
+body .container .tours {
+  width: 100%;
+  height: 100vh;
+  background-color: #f1eeed;
+}
+/* line 300, ../sass/style.sass */
+body .container .tours h3 {
+  text-align: center;
+  font: bold 30px "Oswald Regular", sans-serif;
+  padding: 40px;
+}
+/* line 304, ../sass/style.sass */
+body .container .tours .tourDates {
+  position: relative;
+  width: 60%;
+  height: 40%;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+/* line 310, ../sass/style.sass */
+body .container .tours .tourDates hr {
+  border: 1px solid #e4dddb;
+  position: absolute;
+  width: 100%;
+  top: 10px;
+  left: 0;
+}
+/* line 316, ../sass/style.sass */
+body .container .tours .tourDates ul {
+  display: inline-block;
+  -webkit-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+          transform: rotate(270deg);
+  position: absolute;
+  top: -175px;
+  left: 270px;
+}
+/* line 322, ../sass/style.sass */
+body .container .tours .tourDates ul li {
+  position: relative;
+  text-align: right;
+  list-style-type: none;
+  padding: 10px 0;
+  font: 14px "Lora Bold", sans-serif;
+}
+/* line 328, ../sass/style.sass */
+body .container .tours .tourDates ul li::after {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #e4dddb;
+  position: absolute;
+  right: -30px;
+  top: 45%;
+}
+/* line 338, ../sass/style.sass */
+body .container .tours .tourDates ul li:nth-child(1), body .container .tours .tourDates ul li:nth-child(2), body .container .tours .tourDates ul li:nth-child(3), body .container .tours .tourDates ul li:nth-child(4), body .container .tours .tourDates ul li:nth-child(5), body .container .tours .tourDates ul li:nth-child(6) {
+  color: #e4dddb;
+}
+/* line 346, ../sass/style.sass */
+body .container .tours .tourDates ul li:nth-child(7)::after {
+  background-color: #241c18;
+}
+/* line 348, ../sass/style.sass */
+body .container .tours .tourDates ul li:nth-child(8), body .container .tours .tourDates ul li:nth-child(9), body .container .tours .tourDates ul li:nth-child(10), body .container .tours .tourDates ul li:nth-child(11), body .container .tours .tourDates ul li:nth-child(12) {
+  color: #826b60;
+}
+/* line 354, ../sass/style.sass */
+body .container .tours .tourDates ul li:nth-child(8)::after, body .container .tours .tourDates ul li:nth-child(9)::after, body .container .tours .tourDates ul li:nth-child(10)::after, body .container .tours .tourDates ul li:nth-child(11)::after, body .container .tours .tourDates ul li:nth-child(12)::after {
+  background-color: #826b60;
+}
+/* line 356, ../sass/style.sass */
+body .container .tours .closestEvents {
+  width: 60%;
+  height: 25%;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+/* line 361, ../sass/style.sass */
+body .container .tours .closestEvents li {
+  list-style-type: none;
+  padding: 10px;
+  border-bottom: 1px dotted #826b60;
+  text-transform: capitalize;
+  font: 25px "Oswald Light", sans-serif;
+  position: relative;
+}
+/* line 368, ../sass/style.sass */
+body .container .tours .closestEvents li .date {
+  display: inline-block;
+  font: bold 32px "Oswald Regular", sans-serif;
+  position: relative;
+  margin-right: 50px;
+  border-right: 6px solid #e4dddb;
+  padding-right: 50px;
+  line-height: 100%;
+}
+/* line 376, ../sass/style.sass */
+body .container .tours .closestEvents li .date::before {
+  content: "DEC";
+  display: block;
+  position: absolute;
+  font: bold 14px "Oswald Regular", sans-serif;
+  top: -5%;
+  left: 35px;
+}
+/* line 383, ../sass/style.sass */
+body .container .tours .closestEvents li .date::after {
+  content: "2015";
+  display: block;
+  position: absolute;
+  font: bold 14px "Oswald Regular", sans-serif;
+  top: 40%;
+  left: 35px;
+}
+/* line 392, ../sass/style.sass */
+body .container .tours .closestEvents li:nth-child(4) .date::before {
+  content: "JAN";
+}
+/* line 394, ../sass/style.sass */
+body .container .tours .closestEvents li:nth-child(4) .date::after {
+  content: "2016";
+}
+/* line 398, ../sass/style.sass */
+body .container .tours .closestEvents li:nth-child(5) .date::before {
+  content: "FEB";
+}
+/* line 400, ../sass/style.sass */
+body .container .tours .closestEvents li:nth-child(5) .date::after {
+  content: "2016";
+}
+/* line 404, ../sass/style.sass */
+body .container .tours .closestEvents li:nth-child(6) .date::before {
+  content: "MAR";
+}
+/* line 406, ../sass/style.sass */
+body .container .tours .closestEvents li:nth-child(6) .date::after {
+  content: "2016";
+}
+/* line 408, ../sass/style.sass */
+body .container .tours .closestEvents li button {
+  border: none;
+  width: 70px;
+  height: 25px;
+  font: 14px "Oswald Regular", sans-serif;
+  background-color: #826b60;
+  color: #f8f8f8;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  margin: auto 0;
+}
+
+/*# sourceMappingURL=style.css.map */

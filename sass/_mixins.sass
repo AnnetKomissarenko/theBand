@@ -1,0 +1,27 @@
+$font: #241c18
+$mediumfont: #9c8981
+$lightfont: #826b60
+$lightestfont: #e4dddb
+$whity: #f8f8f8
+
+=button($bgc, $color)
+    border: none
+    width: 70px
+    height: 25px
+    font: 14px "Oswald Regular", sans-serif
+    background-color: $bgc
+    color: $color
+    
+=arrow($h, $w, $bwidth, $bcolor)
+    display: block
+    height: $h
+    width: $w
+    background-color: transparent
+    border: $bwidth solid $bcolor
+    border-radius: 5px
+    transform: rotate(45deg)
+    border-right-color: transparent
+    border-top-color: transparent
+    position: absolute
+    top: 45% 
+    
